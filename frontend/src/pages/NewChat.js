@@ -18,31 +18,79 @@ import ReactMarkdown from "react-markdown";
 import GooglePlacesImageUpdater from "../api/GooglePlacesImageFetcher";
 
 function NewChat() {
-  const [forceRender, setForceRender] = useState(false); // 렌더링 트리거 상태
+  const [places, setPlaces] = useState(() => {
+    try {
+      const storedPlaces = sessionStorage.getItem("places");
+      return storedPlaces ? JSON.parse(storedPlaces) : {}; // 빈 객체 초기화
+    } catch (error) {
+      console.error("Error parsing places from sessionStorage:", error);
+      return {};
+    }
+  });
+
+  const isUpdatingImages = useRef(false); // 이미지 업데이트 상태 추적
+
+  // 장소 상태 변경 감지 및 이미지 업데이트 처리
+  useEffect(() => {
+    if (!places || Object.keys(places).length === 0 || isUpdatingImages.current)
+      return;
+
+    console.log("useEffect: Places updated, triggering handleUpdateImages.");
+    handleUpdateImages();
+  }, [places]);
 
   const handleUpdateImages = async () => {
-    if (updaterRef.current) {
-      await updaterRef.current.updateSessionStorageWithImages(); // 비동기 작업 완료
+    if (!places || Object.keys(places).length === 0) {
+      console.warn("handleUpdateImages: No places to update.");
+      return;
     }
-    // sessionStorage 데이터를 다시 상태로 업데이트
+
+    console.log("handleUpdateImages: Updating images for places...", places);
+
+    isUpdatingImages.current = true; // 업데이트 중 상태 설정
+
+    if (updaterRef.current) {
+      try {
+        await updaterRef.current.updateSessionStorageWithImages();
+      } catch (error) {
+        console.error("Error updating images:", error);
+      }
+    }
+
     const updatedPlaces = sessionStorage.getItem("places");
     if (updatedPlaces) {
-      setPlaces(JSON.parse(updatedPlaces));
+      try {
+        const parsedPlaces = JSON.parse(updatedPlaces);
+        if (JSON.stringify(parsedPlaces) !== JSON.stringify(places)) {
+          setPlaces(parsedPlaces); // 변경된 데이터만 업데이트
+        }
+      } catch (error) {
+        console.error("Error parsing updated places:", error);
+      }
     }
+
+    isUpdatingImages.current = false; // 업데이트 완료 후 상태 초기화
   };
+
+  // 세션 스토리지 동기화
   useEffect(() => {
     const syncPlacesFromSessionStorage = () => {
       const storedPlaces = sessionStorage.getItem("places");
       if (storedPlaces) {
-        setPlaces(JSON.parse(storedPlaces));
+        try {
+          setPlaces(JSON.parse(storedPlaces));
+        } catch (error) {
+          console.error("Error syncing places from sessionStorage:", error);
+          setPlaces({}); // 오류 발생 시 빈 객체로 설정
+        }
+      } else {
+        setPlaces({}); // 기본값 설정
       }
     };
 
-    // 변화가 있을 때 동기화
     window.addEventListener("storage", syncPlacesFromSessionStorage);
 
     return () => {
-      // 이벤트 리스너 정리
       window.removeEventListener("storage", syncPlacesFromSessionStorage);
     };
   }, []);
@@ -75,11 +123,6 @@ function NewChat() {
   });
   const [selectedThemes, setSelectedThemes] = useState(() => {
     return JSON.parse(sessionStorage.getItem("selectedThemes")) || [];
-  });
-  const [places, setPlaces] = useState(() => {
-    // 초기 상태를 sessionStorage에서 로드
-    const storedPlaces = sessionStorage.getItem("places");
-    return storedPlaces ? JSON.parse(storedPlaces) : [];
   });
 
   const [message, setMessage] = useState("");
@@ -294,14 +337,12 @@ function NewChat() {
       if (location_info?.places) {
         const processedPlaces = processPlaces(location_info.places);
 
-
         setPlaces((prevPlaces) => {
           const mergedPlaces = { ...prevPlaces, ...processedPlaces };
           sessionStorage.setItem("places", JSON.stringify(mergedPlaces));
           console.log("Merged places saved to sessionStorage:", mergedPlaces);
           return mergedPlaces;
         });
-
       }
 
       if (location_info?.hash_tag) {
@@ -410,7 +451,7 @@ function NewChat() {
     setDateRange([null, null]);
     setSelectedCompanion(null);
     setSelectedThemes([]);
-    setPlaces(null);
+    setPlaces({});
     setHashTags([]);
     setIsGenerating(false); // 초기화 시 일정 생성 상태도 리셋
     setIsGreetingAccepted(false); // Greeting 초기화
@@ -652,15 +693,6 @@ function NewChat() {
             className={styles.sendIcon}
             onClick={handleSendMessage}
           />
-          <button
-            onClick={handleUpdateImages}
-            style={{
-              opacity: 0,
-              pointerEvents: "auto", // 클릭 가능 유지
-            }}
-          >
-            Update Images
-          </button>
           <GooglePlacesImageUpdater ref={updaterRef} />
         </div>
       </div>

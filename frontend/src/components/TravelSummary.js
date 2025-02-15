@@ -63,7 +63,7 @@ function TravelSummary() {
       return;
     }
 
-    // 이미지 매핑 데이터
+    // 속도 개선을 위한 주요 이미지 매핑
     const imageMapping = {
       황우지해안:
         "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AdDdOWpJUNQJy-60SccLIhgElDKPvhoXgQ4heqyyP1kl9ZACLtIEQoqsuTFJmGO6TpLvfj011NF7TEA5pJWJkiABZDUrDTT7hv8y8L2D-5Yqjrk0A2AEZzzDRsEW4q76NQPGvV14x3yv_dMUtLYDObvVEStv7UWLkHxoaMoUJRyHYu8bZw0O&key=AIzaSyBenOSRj_n3bCTZcdqOmqnnBmCEsi1kOyI",
@@ -75,6 +75,34 @@ function TravelSummary() {
         "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AdDdOWohGU_p7dLOYPled12cR8gct9WyD55JD6NK2iLww_mssegWiCNRAQVe7khamIGTIPkhg2rcEKGWRX7RouXLKMOEabvhM56OQhI3bfD5hrVn0uEeCVIU37D63BuSQJ_hgFRdzagONRPNOqedtIDhG0qxkxonI_6yq3nOAI92VIFhFv0_&key=AIzaSyBenOSRj_n3bCTZcdqOmqnnBmCEsi1kOyI",
       제주민속관광타운:
         "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AdDdOWrJVYvkRNj22WQQN1DiFZf8Yrz4Kc6Lqeog2CcVRrXgADC4T8FAIfxlC3r9Z5UmtyqKa19UZXNG2MERP-YPfJkDox3IruuK3hJsa1LLoedLLNWNupqCj2iJ6yhR83pYl9DtiF65T_yewNSJs4eDPb299nepoUMQvXIZO4gDX4MXpcv7&key=AIzaSyBenOSRj_n3bCTZcdqOmqnnBmCEsi1kOyI",
+      제주허브동산:
+        "https://lh5.googleusercontent.com/p/AF1QipP7lNiMllNOcG8FC3DqALuO3HMBv30ylFMyZoAx=w408-h306-k-no",
+      한라산탐방로:
+        "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODEwMjJfMjM2%2FMDAxNTQwMjA5NTEyOTUw.xIjeYzYHUYjtuSpnMOsbtrx9LhoTTaOb8oHkZgS-Rfwg.sG8Fo8Qz4skIqCzxUWWHQPvWq5pNKVZ5-ompCipqZfQg.JPEG.kokage1120%2FP1970602.jpg%23591x886",
+      "호루의 한끼":
+        "https://lh5.googleusercontent.com/p/AF1QipPoEvEX9rTCdXoxzYJ8OzNJ4XfhJXZTduXPr4mJ=w426-h240-k-no",
+      동백동산:
+        "https://lh5.googleusercontent.com/p/AF1QipMnuHsgty_PkqBF_ewJfoUVzQ-WwmBtYDZLuVW1=w408-h272-k-no",
+      서빈백사해수욕장:
+        "https://lh5.googleusercontent.com/p/AF1QipNoXRQjxaZ3sPpU9t6cgSt2jGWPsTtPA1e0En6c=w408-h306-k-no",
+      "형과 아우(한얼식당)":
+        "https://lh5.googleusercontent.com/p/AF1QipNlQahXghvLQE2c1sS77OoTBYrZtpSZwp0L8X7u=w408-h905-k-no",
+      교래생태체험장:
+        "https://lh5.googleusercontent.com/p/AF1QipMJrMPZN3qMRV9O_5IuSw5Hy9FjRAupVvYIDZZL=w533-h240-k-no",
+      천지연기정길:
+        "https://lh5.googleusercontent.com/p/AF1QipOAkhVKrq3broFnCMCx4sdqm45jxANDfoC2k3bi=w426-h240-k-no",
+      "Cafe Gyulkkot Darak":
+        "https://lh5.googleusercontent.com/p/AF1QipODfr1-46iW-luojJPPZ8v0ruhnexsiHVTSnkZP=w408-h306-k-no",
+      협재관광지:
+        "https://lh5.googleusercontent.com/p/AF1QipNFmem5tBp7EDwMWE2eUNzWkwbvMUnsuenKD7Na=w408-h306-k-no",
+      표선우동가게:
+        "https://lh5.googleusercontent.com/p/AF1QipNsiy4JqSDNepPKRhYM2mUlrA574x8QhGBvY8iO=w408-h306-k-no",
+      사라봉공원:
+        "https://lh5.googleusercontent.com/p/AF1QipP86pLgM-W16NUUbSG-hTGtIIsNOs57zTrrCGso=w408-h306-k-no",
+      "각 is in 별":
+        "https://lh5.googleusercontent.com/p/AF1QipOmfRYtUXu6rDXj1dSTsnps2SjX5vlvTz7etcCS=w519-h240-k-no",
+      곽지관광지:
+        "https://lh5.googleusercontent.com/p/AF1QipP3sRGK46ajzwD3kKvhqYNyGJDFL5pJL8FDrVQc=w408-h306-k-no",
     };
 
     const processedPlaces = Object.entries(placesData).map(

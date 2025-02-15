@@ -53,8 +53,8 @@
     <th align="center"><img src="https://github.com/user-attachments/assets/0b9ab0a7-14a8-4731-844a-bde95aa6dc89" alt="사용자 초기 입력 화면" width="400"></th>
   </tr>
   <tr>
-    <td><center>컨슈머 인사이트 여행 도표</td>
-    <td><center>관광 트랜드 평가</td>
+    <td><center>컨슈머 인사이트 여행 도표</center></td>
+    <td><center>관광 트랜드 평가</center></td>
   </tr>
 </table>
 
@@ -79,27 +79,27 @@
 
 ### 🍊 선행 기술 분석 및 차별점
 #### 1) 선행 기술 분석
-1. 여행 일정 관리 어플 ‘트리플’의 ‘AI 일정 추천’ 서비스
-<기능 개요>
- - 여행지, 여행 기간, 여행 스타일 등의 라벨을 제공하여 사용자가 선택한 라벨을 기반으로 AI가 맞춤형 여행 일정을 자동으로 생성해준다.
-<특징 및 한계점>
+1. 여행 일정 관리 어플 ‘트리플’의 ‘AI 일정 추천’ 서비스<br>
+<기능 개요><br>
+ - 여행지, 여행 기간, 여행 스타일 등의 라벨을 제공하여 사용자가 선택한 라벨을 기반으로 AI가 맞춤형 여행 일정을 자동으로 생성해준다.<br>
+<특징 및 한계점><br>
  - 사용자가 선택한 라벨에 따라 AI가 단일 일정을 생성한다.
  - 추천된 일정은 사용자가 편집할 수 있으며 이를 본인의 일정으로 저장할 수 있다.
  - 사용자가 선택한 라벨에 따라 AI가 단일 일정을 제시할 뿐, 실시간으로 요구 사항을 추가하거나 일정을 수정하는 대화형 상호작용이 불가능하다.
  - 일정이 마음에 들지 않을 경우 사용자가 직접 일정을 수정하거나 다시 처음부터 라벨을 선택해야하는 불편함이 존재한다.
  - 여행 일정과 연계된 숙소나 다른 여행 관련 상품에 대한 추가적인 정보나 대체 옵션이제공되지만 광고와 마케팅으로 인한 추천이 이루어지기도 한다.
-2. 마이리얼트립의 ‘AI 여행 플래너 ’ 서비스
-<기능 개요>
- - 챗지피티 기반의 AI 여행 플래너를 제공
-< 특징 및 한계점>
+2. 마이리얼트립의 ‘AI 여행 플래너 ’ 서비스<br>
+<기능 개요><br>
+ - 챗지피티 기반의 AI 여행 플래너를 제공<br>
+< 특징 및 한계점><br>
  - 마이리얼트립이 보유한 데이터베이스를 활용하여, 사용자의 요청에 맞춘 여행 일정과 여행 관련 상품을 추천한다.
  - 사용자가 추천받은 일정 내에서 숙소, 액티비티, 투어 등을 예약할 수 있는 통합된 서비스를 제공한다.
  - GPT 기반 답변이 영어에서 번역되면서 번역 품질이 매끄럽지 않고 어색한 표현이 많고 국내 여행지에 대해서는 다소 미비한 답변을 제공하는 경우가 있다.
  - 현재 해당 서비스는 웹에서는 사용이 불가능하고 앱에서만 사용 가능 하지만 현재 서비스가 중단된 것으로 보인다.
-3. AI 기반 여행 쇼츠 플랫폼인 viiv
- <기능 개요>
- - 질문형 자연어 입력 방식을 통해 여행 일정을 짧은 비디오 형식으로 시각화하여 제공한다.
- <특징 및 한계점>
+3. AI 기반 여행 쇼츠 플랫폼인 viiv<br>
+ <기능 개요><br>
+ - 질문형 자연어 입력 방식을 통해 여행 일정을 짧은 비디오 형식으로 시각화하여 제공한다.<br>
+ <특징 및 한계점><br>
  - 날짜, 도시, 인원, 여행 테마 등에 대한 정해진 질문에 사용자가 답변을 입력하면, AI가 그 정보를 바탕으로 단일 여행 일정을 생성해준다.
  - 짧고 직관적인 쇼츠 형식으로 시각적 콘텐츠를 통해 일정이 제공된다.
  - 일정 추천이 단일 일정에 한정되며, 추가적 상품 추천이나 선택의 다양성이 부족하다.
@@ -143,7 +143,11 @@
 - **여행 일정 저장 및 관리**
   - 생성된 여행 일정을 사용자가 저장할 수 있는 기능 지원
   - 저장된 일정을 사용자가 언제든 다시 확인 가능<br><br>
+<div align="right">
 
+[목차로](#-목차)
+
+</div>
 
 <h2 id="2.1.-주요-화면-구성">🖥️ 주요 화면 구성</h2>
 <table>
@@ -180,7 +184,7 @@
 
 <div align="right">
 
-[목차로](#목차)
+[목차로](#-목차)
 
 </div>
 <br>
@@ -242,7 +246,7 @@ frontend
 <br>
 <div align="right">
 
-[목차로](#목차)
+[목차로](#-목차)
 
 </div>
 <br>
@@ -322,7 +326,7 @@ frontend
 <br>
 <div align="right">
 
-[목차로](#목차)
+[목차로](#-목차)
 </div>
 
 
@@ -361,7 +365,7 @@ frontend
 <br>
 <div align="right">
 
-[목차로](#목차)
+[목차로](#-목차)
 
 </div>
 
@@ -388,7 +392,10 @@ python -m venv [가상환경이름]
 ```
 #### 1.2 라이브러리 설치
 ```
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install --upgrade pip setuptools wheel && \
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu && \
+pip install flask flask-cors python-dotenv flask-sqlalchemy langchain openai pinecone-client langchain-pinecone sentence-transformers pymysql && \
+pip install --upgrade langchain langchain-community && \
 pip install -r requirements.txt --no-deps
 ```
 #### 1.3플라스크 프로젝트 실행
@@ -398,6 +405,7 @@ python app4.py
 #### 2.1 프런트 프로젝트 라이브러리 설치
 ```
 cd ./frontend # 프로젝트 루트 디렉토리 기준
+npm install react-scripts --save
 npm install
 ```
 #### 2.2 프런트 프로젝트 실행
@@ -406,7 +414,7 @@ npm start
 ```
 #### 3.1 스프링 프로젝트 실행
 - server 디렉토리의 gradle 파일 빌드 및 실행<br>
-![image](https://github.com/user-attachments/assets/43a6f66f-6261-41ce-ae8b-b2b629e7a409)
+![image](https://github.com/user-attachments/assets/43a6f66f-6261-41ce-ae8b-b2b629e7a409)<br>
 ![image](https://github.com/user-attachments/assets/e4f21c20-9ec0-49be-b108-27d3ca2b674e)
 
 #### 4. 구체적인 실행 방법 링크
@@ -414,13 +422,12 @@ npm start
 
 <div align="right">
 
-[목차로](#목차)
+[목차로](#-목차)
 
 </div>
 
 <h2 id="5.-추가-자료">📑 추가 자료</h2>
 
-## 추가자료
 ### 프로젝트 관리
 - 회의록 바로가기: [노션 회의록 바로가기](https://meadow-cast-ab6.notion.site/15c2184fcc7f8017a4c1d2e5902bbcba?v=15c2184fcc7f81dc94db000c014875ba&pvs=4)</br>
 - 프로젝트 일정 관리: [간트차트 바로가기](https://docs.google.com/spreadsheets/d/1pmHWCLUkOmYGtPjWniW8xUe0MbYlfN0K/edit?gid=1439925983#gid=1439925983)
@@ -428,12 +435,12 @@ npm start
 
 
 ### 발표자료 및 계획서와 보고서
-- 수행계획서: [수행계획서 바로보기](https://github.com/SuHyunKKim/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D%EC%84%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
-- 최종보고서: [최종보고서 바로보기](
-- 제안발표: [제안발표자료 바로보기](https://github.com/SuHyunKKim/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%A0%9C%EC%95%88%EB%B0%9C%ED%91%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
-- 중간발표: [중간발표자료 바로보기](https://github.com/SuHyunKKim/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
-- 최종발표: [최종발표자료 바로보기](https://github.com/SuHyunKKim/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%B5%9C%EC%A2%85%EB%B0%9C%ED%91%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
-- 특허명세서: [특허명세서 바로보기](
+- 수행계획서: [수행계획서 바로가기](https://github.com/SuHyunKKim/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%88%98%ED%96%89%EA%B3%84%ED%9A%8D%EC%84%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
+- 최종보고서: [최종보고서 바로가기](https://github.com/CSID-DGU/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
+- 제안발표: [제안발표자료 바로가기](https://github.com/SuHyunKKim/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%A0%9C%EC%95%88%EB%B0%9C%ED%91%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
+- 중간발표: [중간발표자료 바로가기](https://github.com/SuHyunKKim/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
+- 최종발표: [최종발표자료 바로가기](https://github.com/SuHyunKKim/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%EC%B5%9C%EC%A2%85%EB%B0%9C%ED%91%9C_S3_%EC%A7%AC%EB%BD%95.pdf)
+- 특허명세서: [특허명세서 바로가기](https://github.com/CSID-DGU/2024-2-SCS4031-jjambbong-3/blob/main/Docs/%ED%8A%B9%ED%97%88%EB%AA%85%EC%84%B8%EC%84%9C_S3_%EC%A7%AC%EB%BD%95_%EC%B5%9C%EC%A2%85.pdf)
 
 ### 프로젝트 진행 관련 자료
 - 기능명세서: [기능명세서 바로가기](https://meadow-cast-ab6.notion.site/15c2184fcc7f8064af2bcdaf2561bf32?pvs=4)
@@ -442,6 +449,6 @@ npm start
 
 <div align="right">
 
-[목차로](#목차)
+[목차로](#-목차)
 
 </div>
